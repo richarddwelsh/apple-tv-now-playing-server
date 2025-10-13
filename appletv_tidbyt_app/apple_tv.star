@@ -236,7 +236,7 @@ def render_now_playing_half(json):
                             offset_start = 6,
                             offset_end = 6,
                             align = "center",
-                            height = 8,
+                            height = 9,
                             width = 64,
                             child = render.Text(
                                 content = show,
@@ -252,7 +252,7 @@ def render_now_playing_half(json):
                             offset_start = 6,
                             offset_end = 6,
                             align = "center",
-                            height = 8,
+                            height = 9,
                             width = 64,
                             child = render.Text(
                                 content = season_ep,
@@ -268,7 +268,7 @@ def render_now_playing_half(json):
                             offset_start = 6,
                             offset_end = 6,
                             align = "center",
-                            height = 8,
+                            height = 9,
                             width = 64,
                             child = render.Text(
                                 content = ep_title,
@@ -290,12 +290,12 @@ def render_now_playing_half(json):
             children = [
                 # Show name - larger, green
                 render.Box(
-                    height = 12,
+                    height = 14,
                     child = render.Marquee(
                         offset_start = 8,
                         offset_end = 8,
                         align = "center",
-                        height = 10,
+                        height = 13,
                         width = 64,
                         child = render.Text(
                             content = show,
@@ -305,15 +305,15 @@ def render_now_playing_half(json):
                     ),
                 ) if show else None,
                 # Small spacer
-                render.Box(height = 2) if show and episode else None,
-                # Episode info - smaller, white/default
+                render.Box(height = 1) if show and episode else None,
+                # Episode info - smaller, gray
                 render.Box(
-                    height = 12,
+                    height = 10,
                     child = render.Marquee(
                         offset_start = 8,
                         offset_end = 8,
                         align = "center",
-                        height = 10,
+                        height = 9,
                         width = 64,
                         child = render.Text(
                             content = episode,
@@ -406,8 +406,27 @@ def clean_text(text):
 
 def render_idle(config):
     # note: for self-hosted apps you cannot render nothing via []
-    data = {"title": "...", "artist": "Apple TV"}
-    return render_now_playing_half(data)
+    return render.Root(
+        render.Row(
+            main_align = "center",
+            cross_align = "center",
+            expanded = True,
+            children = [
+                render.Marquee(
+                    offset_start = 8,
+                    offset_end = 8,
+                    align = "center",
+                    height = 13,
+                    width = 64,
+                    child = render.Text(
+                        content = "Apple TV",
+                        color = "#666666",
+                        font = "6x13",
+                    ),
+                ),
+            ],
+        ),
+    )
 
 def render_error(msg):
     return render.Root(
