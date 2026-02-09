@@ -3,6 +3,7 @@ import base64
 import re
 import sys
 import signal
+from pathlib import Path
 
 from pyatv import scan, pair, connect
 from pyatv.const import Protocol
@@ -26,7 +27,13 @@ def handle_exception(loop, context):
         print("Crashing service to trigger restart", file=sys.stderr)
         sys.exit(1)  # Exit with error code to ensure Docker restarts the service
 
-app = Quart(__name__)
+BASE_DIR = Path(__file__).parent.resolve()
+# Serve static assets from ./public (relative to app.py)
+app = Quart(
+    __name__,
+    static_folder=str(BASE_DIR / "front-end/dist"),
+    static_url_path="/static",
+)
 
 
 ### PAIRING ROUTES
