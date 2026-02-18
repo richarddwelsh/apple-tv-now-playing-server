@@ -5,6 +5,8 @@
   text-align: center;
 }
 
+h2 { font-size: 200%; }
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +41,14 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.2em;
+}
+
+.icons img {
+  width: 5em;
 }

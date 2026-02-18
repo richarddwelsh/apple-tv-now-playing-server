@@ -36,6 +36,13 @@ app = Quart(
 )
 
 
+@app.after_request
+async def add_cors_header(response):
+    # Ensure all responses include CORS header for cross-origin requests
+    response.headers.setdefault("Access-Control-Allow-Origin", "*")
+    return response
+
+
 ### PAIRING ROUTES
 
 # memory storage..

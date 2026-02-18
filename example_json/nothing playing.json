@@ -1,1 +1,18 @@
-{"album":"","artist":"","content_identifier":"","device_state":"DeviceState.Idle","episode_number":"","genre":"","hash":"ca496c14642c78af6dd4250191fe175f6dafd72b4c33bcbab43c454aae051da1","itunes_store_identifier":"","media_type":"MediaType.Unknown","position":"","repeat":"RepeatState.Off","season_number":"","series_name":"","shuffle":"ShuffleState.Off","title":"","total_time":""}
+{
+  "album": "",
+  "artist": "",
+  "content_identifier": "",
+  "device_state": "DeviceState.Idle",
+  "episode_number": "",
+  "genre": "",
+  "hash": "ca496c14642c78af6dd4250191fe175f6dafd72b4c33bcbab43c454aae051da1",
+  "itunes_store_identifier": "",
+  "media_type": "MediaType.Unknown",
+  "position": "",
+  "repeat": "RepeatState.Off",
+  "season_number": "",
+  "series_name": "",
+  "shuffle": "ShuffleState.Off",
+  "title": "",
+  "total_time": ""
+}
